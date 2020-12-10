@@ -1,0 +1,11 @@
+﻿@model WTMFirst.ViewModel.SchoolVMs.SchoolListVM
+@inject IStringLocalizer<WalkingTec.Mvvm.Core.Program> Localizer;
+
+<wt:searchpanel vm="@Model" reset-btn="true">
+<wt:row items-per-row="ItemsPerRowEnum.Three">
+<wt:textbox field="Searcher.SchoolCode" />
+<wt:textbox field="Searcher.SchoolName" />
+<wt:combobox field="Searcher.SchoolType" empty-text="@Localizer["All"]" />
+</wt:row>
+</wt:searchpanel>
+<wt:grid vm="@Model" url="/School/Search"/>
